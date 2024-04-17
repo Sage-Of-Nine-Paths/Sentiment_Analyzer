@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SIH 1357</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span class="logo">SIH 1357</span></a>
+            <div class="ml-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="box">
+            <h3>Drop/Upload comments in csv format</h3>
+            <div class="dropzone" id="dropzone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+                <p>Drag and drop here</p>
+            </div>
+            <div class="buttons">
+                <label for="file-input" id="upload-button">Upload</label>
+                <input type="file" id="file-input" accept=".csv" onchange="fileInputHandler(event);">
+                <button id="process-button" onclick="processFile(event)">Process</a>
+            </div>
+            <div class="file-name-container">
+                <p id="file-name"></p>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="chart-1">
+                <canvas id="pie-chart"></canvas>
+            </div>
+            <div>
+                <button onclick="displayPBIX()" href="#pbix-iframe">Detailed report</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
